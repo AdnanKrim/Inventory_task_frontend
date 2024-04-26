@@ -7,6 +7,7 @@ import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import InventoryLIst from "./Components/Inventory/InventoryLIst.jsx";
 import ItemsList from "./Components/Items/ItemsList.jsx";
+import InventoryAdd from "./Components/Inventory/InventoryAdd.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +27,12 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "inverntory",
+    path: "/",
     element: <InventoryLIst />,
+  },
+  {
+    path: "inverntoryAdd",
+    element: <InventoryAdd />,
   },
   {
     path: "items",

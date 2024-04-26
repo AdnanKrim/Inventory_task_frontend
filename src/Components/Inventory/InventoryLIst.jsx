@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SideNav from "../SideNav";
 
 const InventoryLIst = () => {
@@ -24,9 +25,11 @@ const InventoryLIst = () => {
             <h1 className="text-2xl font-semibold">Email: </h1>
             {/* add button  */}
             <div className="mt-[50px] flex justify-end">
+              <Link to="inverntoryAdd">
               <button className=" btn uppercase btn-info text-white">
                 add
               </button>
+              </Link>
             </div>
             {/*----------------- dynamic cards section ------------- */}
             <div className="mt-[50px] grid lg:grid-cols-4 md:grid-cols-2 sm: grid-cols-1 gap-10">
@@ -34,39 +37,51 @@ const InventoryLIst = () => {
               <div className="border border-black shadow-gray-500 shadow-md w-[340px] p-[5px] rounded-md">
                 <h1 className="text-2xl font-semibold mb-[10px]">Name: </h1>
                 <h1 className="text-2xl font-semibold">Product: </h1>
-                <div className="flex justify-end">
+                <div className="flex gap-2 justify-end">
                   <button className=" btn btn-success text-white btn-sm w-[50px]">
                     Details
                   </button>
-                </div>
-              </div>
-              {/* card-1  */}
-              <div className="border border-black shadow-gray-500 shadow-md w-[340px] p-[5px] rounded-md">
-                <h1 className="text-2xl font-semibold mb-[10px]">Name: </h1>
-                <h1 className="text-2xl font-semibold">Product: </h1>
-                <div className="flex justify-end">
-                  <button className=" btn btn-success text-white btn-sm w-[50px]">
-                    Details
+                  <button className=" btn btn-error text-white btn-sm w-[50px]">
+                    Delete
                   </button>
                 </div>
               </div>
-              {/* card-1  */}
+              {/* card-2  */}
               <div className="border border-black shadow-gray-500 shadow-md w-[340px] p-[5px] rounded-md">
                 <h1 className="text-2xl font-semibold mb-[10px]">Name: </h1>
                 <h1 className="text-2xl font-semibold">Product: </h1>
-                <div className="flex justify-end">
+                <div className="flex gap-2 justify-end">
                   <button className=" btn btn-success text-white btn-sm w-[50px]">
                     Details
                   </button>
+                  <button className=" btn btn-error text-white btn-sm w-[50px]">
+                    Delete
+                  </button>
                 </div>
               </div>
-              {/* card-1  */}
+              {/* card-3  */}
               <div className="border border-black shadow-gray-500 shadow-md w-[340px] p-[5px] rounded-md">
                 <h1 className="text-2xl font-semibold mb-[10px]">Name: </h1>
                 <h1 className="text-2xl font-semibold">Product: </h1>
-                <div className="flex justify-end">
+                <div className="flex gap-2 justify-end">
                   <button className=" btn btn-success text-white btn-sm w-[50px]">
                     Details
+                  </button>
+                  <button className=" btn btn-error text-white btn-sm w-[50px]">
+                    Delete
+                  </button>
+                </div>
+              </div>
+              {/* card-4  */}
+              <div className="border border-black shadow-gray-500 shadow-md w-[340px] p-[5px] rounded-md">
+                <h1 className="text-2xl font-semibold mb-[10px]">Name: </h1>
+                <h1 className="text-2xl font-semibold">Product: </h1>
+                <div className="flex gap-2 justify-end">
+                  <button className=" btn btn-success text-white btn-sm w-[50px]">
+                    Details
+                  </button>
+                  <button className=" btn btn-error text-white btn-sm w-[50px]">
+                    Delete
                   </button>
                 </div>
               </div>
