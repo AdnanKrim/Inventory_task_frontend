@@ -10,7 +10,7 @@ const Register = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [phoneNo, setphoneNo] = useState("");  
+    const [name, setName] = useState("");  
     const [showPassword, setShowPassword] = useState(false);
     const handleShowPassword = () => {
       setShowPassword(!showPassword);
@@ -25,8 +25,8 @@ const Register = () => {
     };
 
   
-    const handlephoneNoChange = (e) => {
-      setphoneNo(e.target.value);
+    const handleNameChange = (e) => {
+      setName(e.target.value);
     };
   
     // handle button section ----------------
@@ -37,13 +37,12 @@ const Register = () => {
       data.append("name", name);
       data.append("email", email);
       data.append("password", password);
-      data.append("phoneNo", phoneNo);
       console.log(data);
       const headers = {
         'Content-Type': 'multipart/form-data'
       };
   
-      axios.post('https://backend.ap.loclx.io/api/student-reg', data,{
+      axios.post('http://127.0.0.1:8000/api/user-reg', data,{
         headers: headers,
       })
         .then((res) => {
@@ -66,7 +65,7 @@ const Register = () => {
       // setBirthDate('');
       // setEmail('');
       // setPassword('');
-      // setphoneNo('');
+      // setName('');
       // setImage('');
     };
 
@@ -87,16 +86,16 @@ const Register = () => {
   
             {/* Phone section  */}
               <div>
-                <label htmlFor="phoneNo">Phone Number:</label>
+                <label htmlFor="name">Name:</label>
                 <input
                   required
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  placeholder="Your Phone Number"
-                  type="number"
-                  name="phoneNo"
-                  id="phoneNo"
-                  value={phoneNo}
-                  onChange={handlephoneNoChange}
+                  placeholder="Your Name"
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={name}
+                  onChange={handleNameChange}
                 />
               </div>
   

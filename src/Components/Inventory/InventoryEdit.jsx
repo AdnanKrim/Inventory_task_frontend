@@ -1,39 +1,26 @@
-import { useEffect, useState } from "react";
-import SideNav from "../SideNav";
+
+import { useState } from 'react';
+import SideNav from '../SideNav';
+
 import { FaPlusCircle } from "react-icons/fa";
-import axios from "axios";
 
-const InventoryAdd = () => {
-  const [selectItem, setSelectItem] = useState([]);
-  const [itemName, setItemName] = useState("");
-  const [itemDescription, setItemDescription] = useState("");
-  const [quantity, setQuantity] = useState("");
+const InventoryEdit = () => {
 
-  useEffect(() => {
-    axios
-      .get("")
-      .then((res) => {
-        setSelectItem(res.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    const [itemName, setItemName] = useState("");
+    const [itemDescription, setItemDescription] = useState("");
+    const [quantity, setQuantity] = useState("");
 
-  }, []);
-  console.log(selectItem);
-
-  return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Mobile and medium device sidebar toggle button */}
-      <SideNav />
-
-      {/* ----------------Main content -------------------*/}
-      <div className="flex-1 flex flex-col overflow-hidden bg-[#25476a]">
-        <div className="flex justify-end py-3">
-          <button className="btn me-[10px]">Logout</button>
-        </div>
-        {/* Page content */}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+    return (
+        <div className="flex h-screen bg-gray-100">
+        {/* Mobile and medium device sidebar toggle button */}
+  <SideNav/>
+  
+        {/* ----------------Main content -------------------*/}
+        <div className="flex-1 flex flex-col overflow-hidden bg-[#25476a]">
+  <div className="flex justify-end py-3"><button className="btn me-[10px]">Logout</button></div>
+          {/* Page content */}
+{/* Page content */}
+<main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
           <div
             className="
             lg:mx-[50px] lg:mt-[50px]
@@ -43,7 +30,7 @@ const InventoryAdd = () => {
           >
             {/* title  */}
             <h1 className="text-center text-4xl font-semibold uppercase">
-              Add Inventory
+              Update Inventory
             </h1>
             <hr className="text-center mt-[10px] border border-black" />
 
@@ -107,9 +94,9 @@ const InventoryAdd = () => {
             </div>
           </div>
         </main>
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
-export default InventoryAdd;
+export default InventoryEdit;
