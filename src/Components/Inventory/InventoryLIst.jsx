@@ -76,7 +76,27 @@ const InventoryLIst = () => {
     }
   };
 
-
+ // handle delete inventory item
+ const handleDelete = async (inventoryId) => {
+  try {
+    const token = localStorage.getItem("token");
+    await axios.delete(`http://127.0.0.1:8000/api/inventory-delete/${inventoryId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    // Remove the deleted item from the state
+    setInventoryLists(inventoryLists.filter(item => item.id !== inventoryId));
+    Swal.fire({
+      icon: 'success',
+      title: 'success',
+      text: "Inventory item deleted successfully",
+    });
+  } catch (error) {
+    console.error("Error deleting inventory item:", error);
+    // Handle error, if any
+  }
+};
 
 
   return (
@@ -109,7 +129,7 @@ const InventoryLIst = () => {
               </Link>
             </div>
             {/*----------------- dynamic cards section ------------- */}
-            <div className="mt-[50px] grid lg:grid-cols-4 md:grid-cols-2 sm: grid-cols-1 gap-10">
+            <div className="mt-[50px] grid lg:grid-cols-3 md:grid-cols-2 sm: grid-cols-1 gap-10">
             {inventoryLists.map(inventoryList => (
               <div key={inventoryList.id} className="border border-black shadow-gray-500 shadow-md w-[340px] p-[5px] rounded-md">
                 <h1 className="text-2xl font-semibold mb-[10px]">Name: {inventoryList.invName}</h1>
@@ -120,7 +140,9 @@ const InventoryLIst = () => {
                       Details
                     </button>
                   </Link>
-                  <button className=" btn btn-error text-white btn-sm w-[50px]">
+                  <button   
+                  onClick={() => handleDelete(inventoryList.id)}
+                  className=" btn btn-error text-white btn-sm w-[50px]">
                     Delete
                   </button>
                 </div>

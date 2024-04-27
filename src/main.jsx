@@ -9,6 +9,7 @@ import ItemsList from "./Components/Items/ItemsList.jsx";
 import InventoryAdd from "./Components/Inventory/InventoryAdd.jsx";
 import InventoryDetails from "./Components/Inventory/InventoryDetails.jsx";
 import InventoryEdit from "./Components/Inventory/InventoryEdit.jsx";
+import ItemsAdd from "./Components/Items/ItemsAdd";
 
 const router = createBrowserRouter([
   {
@@ -32,16 +33,20 @@ const router = createBrowserRouter([
     element: <InventoryAdd />,
   },
   {
-    path: "/inverntoryDetails",
+    path: "/inverntoryDetails/:inventoryId",
     element: <InventoryDetails />,
   },
   {
-    path: "/inverntoryUpdate",
+    path: "/inverntoryUpdate/:inventoryId",
     element: <InventoryEdit />,
   },
   {
     path: "/items",
     element: <ItemsList />,
+  },
+  {
+    path: "/itemsAdd",
+    element: <ItemsAdd />,
   },
 ]);
 
