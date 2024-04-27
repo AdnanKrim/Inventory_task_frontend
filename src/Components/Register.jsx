@@ -42,7 +42,7 @@ const Register = () => {
         'Content-Type': 'multipart/form-data'
       };
   
-      axios.post('http://127.0.0.1:8000/api/user-reg', data,{
+      axios.post('https://inventory.4softbd.com/api/user-reg', data,{
         headers: headers,
       })
         .then((res) => {

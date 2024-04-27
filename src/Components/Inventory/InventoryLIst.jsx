@@ -35,7 +35,7 @@ const InventoryLIst = () => {
   useEffect(() => {
     const fetchInventoryList = async () => {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://127.0.0.1:8000/api/inventory-list", {
+        const res = await axios.get("https://inventory.4softbd.com/api/inventory-list", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -51,7 +51,7 @@ const InventoryLIst = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://127.0.0.1:8000/api/user-logout",
+        "https://inventory.4softbd.com/api/user-logout",
         {},
         {
           headers: {
@@ -80,7 +80,7 @@ const InventoryLIst = () => {
  const handleDelete = async (inventoryId) => {
   try {
     const token = localStorage.getItem("token");
-    await axios.delete(`http://127.0.0.1:8000/api/inventory-delete/${inventoryId}`, {
+    await axios.delete(`https://inventory.4softbd.com/api/inventory-delete/${inventoryId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

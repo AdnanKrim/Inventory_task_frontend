@@ -39,7 +39,7 @@ const Login = () => {
     e.preventDefault();
     const data = { email, password };
     console.log('Email:', email, 'Password:', password);
-    axios.post('http://127.0.0.1:8000/api/user-login', data)
+    axios.post('https://inventory.4softbd.com/api/user-login', data)
       .then(res => {
         Swal.fire({
           icon: 'success',

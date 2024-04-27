@@ -13,7 +13,7 @@ const InventoryDetails = () => {
     const fetchInventoryDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://127.0.0.1:8000/api/inventory-detail/${inventoryId}`, {
+        const res = await axios.get(`https://inventory.4softbd.com/api/inventory-detail/${inventoryId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

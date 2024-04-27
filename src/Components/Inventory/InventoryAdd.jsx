@@ -68,7 +68,8 @@ const InventoryAdd = () => {
           quantity: item.quantity,
         })),
       };
-      await axios.post("http://127.0.0.1:8000/api/add-inventory", data, {
+      
+      await axios.post("https://inventory.4softbd.com/api/add-inventory", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

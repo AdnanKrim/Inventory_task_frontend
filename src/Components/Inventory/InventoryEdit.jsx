@@ -24,7 +24,7 @@ const InventoryEdit = () => {
     const fetchInventoryGet = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://127.0.0.1:8000/api/inventory-detail/${inventoryId}`, {
+        const res = await axios.get(`https://inventory.4softbd.com/api/inventory-detail/${inventoryId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -48,7 +48,7 @@ const InventoryEdit = () => {
     const fetchInventoryAdd = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://127.0.0.1:8000/api/item-list", {
+        const res = await axios.get("https://inventory.4softbd.com/api/item-list", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -102,10 +102,10 @@ const InventoryEdit = () => {
       Swal.fire({
         icon: 'success',
         title: 'Success',
-        text: "Inventory data Updated successfull",
+        text: "Inventory data Updated successfully",
       });
       // Send a POST request to save the inventory data
-      const res = await axios.post("http://127.0.0.1:8000/api/inventory-update", payload, {
+      const res = await axios.post("https://inventory.4softbd.com/api/inventory-update", payload, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

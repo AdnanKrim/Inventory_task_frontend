@@ -18,7 +18,7 @@ const ItemsAdd = () => {
 
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.post("http://127.0.0.1:8000/api/add-item", formData, {
+            const res = await axios.post("https://inventory.4softbd.com/api/add-item", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

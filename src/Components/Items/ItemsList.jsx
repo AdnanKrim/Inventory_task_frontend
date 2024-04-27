@@ -11,7 +11,7 @@ const [itemsList , setItemsList] = useState([]);
   useEffect(() => {
     const fetchItemsList = async () => {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://127.0.0.1:8000/api/item-list", {
+        const res = await axios.get("https://inventory.4softbd.com/api/item-list", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
